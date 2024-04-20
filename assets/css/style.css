@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@400;600;700&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* color variables */
+:root {
+	--black: #0c0101;
+	--golden: #dcca87;
+	--text-white: #fcfbeb;
+	--overlay-black: #070303d8;
+}
+
+/* body */
+body {
+	font-family: "Cormorant Upright", serif;
+	color: var(--golden);
+	background: url(../img/candle-light-dinner.jpg) no-repeat top;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+/* for hiding scrollbar */
+::-webkit-scrollbar {
+	display: none;
+}
+
+body::-webkit-scrollbar {
+	overflow: hidden;
+	display: none;
+}
+
+/* common styling */
+.my-btn {
+	border: 1px solid var(--black);
+	color: var(--black);
+	font-size: 1.2rem;
+	font-weight: 900;
+	background: var(--golden);
+}
+
+.my-btn:hover {
+	color: var(--golden);
+	border: 1px solid var(--golden);
+	background: var(--black);
+}
+
+.card {
+	border: 1px solid var(--golden);
+	background-color: var(--black);
+	color: var(--text-white);
+	padding: 2px;
+}
+
+.card,
+.card img,
+.my-btn {
+	border-radius: 0;
+}
+
+/* navbar */
+.main__container .navbar {
+	background-color: var(--black) !important;
+}
+
+.main__container .navbar a {
+	color: var(--text-white) !important;
+}
+
+.main__container .navbar-toggler:focus,
+.main__container .navbar-toggler:active,
+.main__container .navbar-toggler-icon:focus {
+	outline: none;
+	box-shadow: none;
+}
+
+/* offcanvas */
+.main__container .offcanvas {
+	background: url(../img/bg.jpg);
+}
+
+.main__container .offcanvas .offcanvas-header {
+	color: var(--golden);
+	background-color: var(--black);
+}
+
+.main__container .offcanvas .btn-close {
+	background-color: var(--golden) !important;
+}
+
+.main__container .offcanvas .offcanvas-body {
+	color: var(--golden);
+}
+
+/* main section */
+.main__container-overlay {
+	background: var(--overlay-black);
+}
+
+/* search bar */
+.main__container-content.search__container h1 {
+	font-weight: 900;
+}
+
+.main__container-content .search__container input {
+	border-radius: 0 !important;
+	font-size: 1.5rem;
+	color: var(--golden) !important;
+	border: 1px solid var(--golden);
+	background-color: var(--overlay-black);
+}
+
+.main__container-content .search__container input:focus {
+	outline: none;
+	box-shadow: none;
+	border: 1px solid var(--golden);
+	background-color: var(--overlay-black);
+}
+
+/* modal */
+.main__container .modal .modal-header {
+	color: var(--golden);
+	background-color: var(--black);
+}
+
+.main__container .modal .modal-header .btn-close {
+	background-color: var(--golden) !important;
+}
+
+.main__container .modal .modal-content {
+	background: url(../img/bg.jpg);
+}
+
+.main__container .modal .modal-body {
+	background: var(--overlay-black);
+}
+
+.main__container .modal .modal-body .card p {
+	font-size: 1.2rem;
+}
+
+/* footer */
+.main__container-footer {
+	border: none;
+	background: var(--black);
+	color: var(--golden);
+}

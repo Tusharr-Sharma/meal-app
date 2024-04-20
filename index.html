@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Search your all favourite meals and their recipes on one platform"
+		/>
+		<meta name="author" content="Tushar Sharma" />
+		<title>Meal Buddy - Search your favourite meal and their recipes</title>
+
+		<!-- Bootstrap stylesheet link-->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+			crossorigin="anonymous"
+		/>
+
+		<!-- Bootstrap javascript link with defer keyword-->
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+			integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+			crossorigin="anonymous"
+			defer
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+			integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+			crossorigin="anonymous"
+			defer
+		></script>
+
+		<!-- Font awesome link for icons -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+			integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+
+		<!-- stylesheet link-->
+		<link rel="stylesheet" href="assets/css/style.css" />
+
+		<!-- Javascript file link with defer keyword-->
+		<script src="assets/js/script.js" defer></script>
+	</head>
+	<body>
+		<div class="main__container">
+			<!-- Navbar -->
+			<nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+				<div class="container">
+					<a class="navbar-brand" href="index.html">Meal Buddy</a>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarSupportedContent"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+							<li class="nav-item">
+								<a
+									class="nav-link active"
+									type="button"
+									data-bs-toggle="offcanvas"
+									data-bs-target="#offcanvasRight"
+									onclick="showFavMealList()"
+								>
+									My Favourites
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<!-- End of Navbar -->
+
+			<!-- offcanvas -->
+			<div
+				class="offcanvas offcanvas-end"
+				tabindex="-1"
+				id="offcanvasRight"
+				aria-labelledby="offcanvasRightLabel"
+			>
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasRightLabel">
+						My Favourites
+					</h5>
+					<button
+						type="button"
+						class="btn-close"
+						data-bs-dismiss="offcanvas"
+						aria-label="Close"
+					></button>
+				</div>
+				<div id="favouritesBody" class="offcanvas-body">
+					<!-- favourite meals will be render here after showFavMealList() function being triggered -->
+				</div>
+			</div>
+			<!-- End of offcanvas -->
+
+			<!-- main container header and body -->
+			<div class="main__container-content pt-5">
+				<!-- Overlay container -->
+				<div class="main__container-overlay pb-5">
+					<!-- Search bar or Header-->
+					<header class="container pt-4 mb-2">
+						<div class="search__container">
+							<h1 class="text-center">Search Your Favourite Meal</h1>
+							<form class="mb-4">
+								<div
+									id="searchBar"
+									class="input-group input-group-lg mt-3"
+									onkeyup="showMeals()"
+								>
+									<input
+										id="mySearch"
+										type="search"
+										class="form-control"
+										placeholder="Search your favourit meals..."
+									/>
+								</div>
+							</form>
+							<div class="mb-3 text-center">
+								<h5 id="searchResult">
+									<!-- search result text -->
+								</h5>
+							</div>
+						</div>
+					</header>
+					<!-- End of Search Bar -->
+
+					<!-- Main Section where all meals will be displayed-->
+					<main class="container">
+						<div id="main" class="main__container-content">
+							<div
+								id="displayMeals"
+								class="row row-cols-1 row-cols-md-4 g-4"
+							></div>
+						</div>
+					</main>
+					<!-- End of Main -->
+
+					<!-- Meal Recipe detal modal (it renders meal details after More Details button clicked) -->
+					<div
+						class="modal fade"
+						id="detailModal"
+						tabindex="-1"
+						aria-labelledby="modalLabel"
+						aria-hidden="true"
+					>
+						<div class="modal-dialog modal-fullscreen">
+							<div id="mealDetailedModal" class="modal-content">
+								<!-- Meal Recipe Details will be show here -->
+							</div>
+						</div>
+					</div>
+					<!-- End of Modal -->
+				</div>
+			</div>
+			<!-- End of Main Container Body -->
+
+			<!-- Footer -->
+			<footer class="main__container-footer card text-center">
+				<div class="card-body">
+					<h5 class="card-title">Created by Tushar Sharma</h5>
+				</div>
+			</footer>
+			<!-- End of Footer -->
+		</div>
+	</body>
+</html>
